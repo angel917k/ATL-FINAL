@@ -1,0 +1,196 @@
+/*start of splash*/
+
+.zindex-ear{
+  position: absolute;
+  left: calc(50% - 125px);
+  margin-top: 5px;
+  height: 250px;
+  width:250px;
+  background-image: url('../img/ear4-rot.png');
+  background-position: center;
+  background-size: 190px;
+  background-repeat: no-repeat;
+  animation:fade 6s infinite;
+}
+.bubble{
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.large{
+  margin-top: 25px;
+  height: 250px;
+  width:250px;
+  background-color: #fff;
+  border-radius: 300px;
+  /*background-image: url('../img/ear4-rot.png');
+  background-position: center;
+  background-size: 190px;
+  background-repeat: no-repeat;*/
+  padding-top: 160px;
+}
+
+.large p{
+  color:#6495ED;
+  font-size: 15px;
+  font-family: 'Vollkorn SC', serif;
+}
+
+
+
+.medium{
+  margin-top: -10px;
+  margin-left:60%;
+  height: 55px;
+  width:55px;
+  background-color: #fff;
+  border-radius: 300px;
+  animation:fadea 6s infinite;
+}
+
+.small{
+  margin-top: 0px;
+  margin-left:calc(62% + 40px);
+  height: 40px;
+  width: 40px;
+  background-color: #fff;
+  border-radius: 300px;
+  animation:fadeb 6s infinite;
+}
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadea {
+  0% {
+    opacity: 0;
+  }
+  15% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  45% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeb {
+  0% {
+    opacity: 0;
+  }
+  22% {
+    opacity: 0;
+  }
+  45% {
+    opacity: 1;
+  }
+  57.5% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/*start of window sizing percentages*/
+
+@media screen and (max-width: 1650px) and (min-width: 1451px) {
+  .medium{
+    margin-top: -10px;
+    margin-left:54%;
+  }
+  .small{
+    margin-top: 0px;
+    margin-left: 57.5%;
+  }
+}
+
+@media screen and (max-width: 1450px) and (min-width: 1251px) {
+  .medium{
+    margin-top: -10px;
+    margin-left:55%;
+  }
+  .small{
+    margin-top: 0px;
+    margin-left: 58.5%;
+  }
+}
+
+@media screen and (max-width: 1250px) and (min-width: 1101px) {
+  .medium{
+    margin-top: -10px;
+    margin-left:58%;
+  }
+  .small{
+    margin-top: 0px;
+    margin-left: 63.5%;
+  }
+}
+
+@media screen and (max-width: 1100px) and (min-width: 910px) {
+  .medium{
+    margin-top: -10px;
+    margin-left:58%;
+  }
+  .small{
+    margin-top: 0px;
+    margin-left: 63.5%;
+  }
+}
+
+@media screen and (max-width: 450px) and (min-width: 350px) {
+  .medium{
+    margin-top: -10px;
+    margin-left:66%;
+  }
+  .small{
+    margin-top: 0px;
+    margin-left: 77.5%;
+  }
+}
+
+@media screen and (max-width: 550px) and (min-width: 451px) {
+  .medium{
+    margin-top: -10px;
+    margin-left:63%;
+  }
+  .small{
+    margin-top: 0px;
+    margin-left: 73.5%;
+  }
+}
+
+@media screen and (max-width: 650px) and (min-width: 551px) {
+  .medium{
+    margin-top: -10px;
+    margin-left:63%;
+  }
+  .small{
+    margin-top: 0px;
+    margin-left: 71.5%;
+  }
+}
+
+/*end of window sizing percentages*/
+/*end of splash*/

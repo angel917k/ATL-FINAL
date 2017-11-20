@@ -1,0 +1,58 @@
+h1{
+  margin-top: 0px;
+  padding-top: 0px;
+  color:white;
+  /*font-family: 'Barlow', sans-serif;*/
+
+}
+
+
+/*go back button styles*/
+.goback{
+  height:25px;
+  width: 25px;
+  position: fixed;
+  left:calc(100% - 95px);
+  top:10px;
+  z-index: 2000;
+  background-image: url('../img/back-arrow.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+ /*tips and submit styles*/
+.tips{
+  width: 85%;
+  margin-top: 30px;
+  padding: 10px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: 'Barlow', sans-serif;
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.tip-submit{
+  width: 85%;
+  height:90%;
+  background-color: #fff;
+  color: #6495ED;
+  margin-top: 2px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+
+/*disclaimer styles*/
+input[type=checkbox]{
+  margin-left: 7.5%;
+  margin-top: 10px;
+}
+input[type=checkbox] + label{
+  margin-left: 3px;
+}

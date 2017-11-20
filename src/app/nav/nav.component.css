@@ -1,0 +1,85 @@
+/*@import './bootstrap-styles/bootstrap-3.3.7-dist/css/bootstrap.min.css';*/
+
+/*start of nav bar styles*/
+
+.navbar-fixed-top, .navbar-fixed-bottom {
+  position: relative;
+  margin-top: 0px;
+  top: 0px;/* this can also be static */
+}
+
+.navbar-inverse{
+  background-color: transparent;
+  border-color:transparent;
+}
+.navbar-inverse .navbar-brand{
+  font-family: 'Slabo 27px', serif;
+  color:#fff;
+  font-size: 2em;
+}
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form{
+  background-color: transparent;
+  border-color:#fff;
+}
+
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form:nth-last-child(3){
+  border-bottom: 1px solid white;
+}
+
+.navbar-inverse .navbar-toggle .icon-bar{
+  /*background-color: blue;*/
+}
+
+.navbar-inverse .navbar-toggle{
+  border: none;
+}
+.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover{
+  background-color:transparent; /*rgba(255,255,255,.5)*/
+}
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover{
+  background-color: transparent;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: #fff;
+}
+/*start of always showing media query*/
+@media (max-width: 2000px) {
+    .navbar-header {
+        float: none;
+    }
+    .navbar-left,.navbar-right {
+        float: none !important;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-fixed-top {
+		top: 0;
+		border-width: 0 0 1px;
+	}
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+		margin-top: 7.5px;
+	}
+	.navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .collapse.in{
+  		display:block !important;
+	}
+}
+/*end of always showing media query*/
+/*end of navbar styles*/
