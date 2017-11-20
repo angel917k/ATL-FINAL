@@ -13,9 +13,10 @@ import { TipPageComponent } from './tip-page/tip-page.component';
 import { SplashComponent } from './splash/splash.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 const appRoutes: Routes = [
-  {path: 'home', component: AppComponent},
+  {path: 'home', component: SplashComponent},
   {path: 'tip-page', component: TipPageComponent},
-  {path: 'login-page', component: LoginPageComponent}
+  {path: 'login-page', component: LoginPageComponent},
+  {path: '', redirectTo: 'home', pathMatch: 'full'}
 ];
 
 
