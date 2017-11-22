@@ -19,15 +19,15 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "../node_modules/bootstrap/dist/css/bootstrap.css",
+        "../src/js/bootstraps/dist/css/bootstrap.css",
         "styles.css"
       ],
       "scripts": [
-        "../node_modules/jquery/dist/jquery.slim.js",
-        "../node_modules/popper.js/dist/umd/popper.js",
-        "../node_modules/bootstrap/dist/js/bootstrap.js",
-        "../node_modules/circletype/circletype.min.js",
-        "../node_modules/atl-js-code/splash.js"
+        "../src/js/jquery/dist/jquery.slim.js",
+        "../src/js/popper.js/dist/umd/popper.js",
+        "../src/js/bootstraps/dist/js/bootstrap.js",
+        "../src/js/atl-js-code/splash.js",
+        "../src/js/circletype/circletype.min.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
