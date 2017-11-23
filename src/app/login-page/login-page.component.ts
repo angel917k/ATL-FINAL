@@ -21,7 +21,7 @@ export class LoginPageComponent implements OnInit {
     this._loginService.getLoggedInUser()
     .subscribe( user => {
         this.loggedInUser = user;
-        console.log(this.loggedInUser);
+        // console.log(this.loggedInUser);
         if (this.loggedInUser) {
             // this.dataCheck(this.loggedInUser.uid);
             // console.log('running initial check...');
