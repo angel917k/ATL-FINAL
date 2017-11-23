@@ -6,3 +6,14 @@
 <!-- start of header -->
 <h1 class="text-center">Login</h1>
 <!-- end of header -->
+
+<!-- Begin login info -->
+<div>
+    <p *ngIf="(!loggedInUser)" class="text-center">You are not logged in!</p>
+    <p *ngIf="(loggedInUser)" class="text-center">You are logged in as {{ loggedInUser.displayName }}.</p>
+    <div class="flex-container justify-center">
+        <button class="btn btn-default" [disabled]="loggedInUser" (click)="login()">Login</button>
+        <button class="btn btn-default" [disabled]="!loggedInUser" (click)="logout()">Logout</button>
+    </div>
+</div>
+<!-- End login info -->
