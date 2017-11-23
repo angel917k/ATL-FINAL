@@ -7,3 +7,17 @@ body{
   background-color: #6495ED;
   font-family: 'Vollkorn SC', serif;
 }
+
+/* Global flex Styles */
+
+.flex-container {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-content: center;
+}
