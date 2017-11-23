@@ -2,6 +2,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 
+// import angular fire modules
+import { environment } from './../environments/environment';
+import { AngularFireModule} from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+
+// import services
+import { LoginService } from './services/login.service';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -34,9 +41,13 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [
+    LoginService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
