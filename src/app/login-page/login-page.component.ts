@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { LoginService } from './../services/login.service';
 import { TipService } from './../services/tip.service';
 
+import IUser from './../interfaces/user.interface';
+
 import 'rxjs/add/operator/map';
 
 @Component({
@@ -10,28 +12,34 @@ import 'rxjs/add/operator/map';
   templateUrl: './login-page.component.html',
   styleUrls: ['./login-page.component.css']
 })
+
 export class LoginPageComponent implements OnInit {
 
-  public loggedInUser; // will contain users login info
-  public userIdResult; // flag to denote if the user is in the database
-  public viewPassResult; // flag to denote if the user has a viewing password.
+    public loggedInUser; // will contain users login info
+    public userIdResult; // flag to denote if the user is in the database
+    public viewPassResult; // flag to denote if the user has a viewing password.
 
-  constructor(private _loginService: LoginService, private _tipService: TipService) { }
+    // ngModels for password entry
+    public pass1: string;
+    public pass2: string;
+    private _passwordError = false;
 
-  ngOnInit() {
+    constructor(private _loginService: LoginService, private _tipService: TipService) { }
 
-    // Get the logged in user from the service on page init
-    this._loginService.getLoggedInUser()
-    .subscribe( user => {
-        this.loggedInUser = user;
-        // console.log(this.loggedInUser);
-        if (this.loggedInUser) {
-            this.dataCheck(this.loggedInUser.uid);
-            console.log('running initial check...');
-        }
-    });
+    ngOnInit() {
 
-  } // end oninit
+        // Get the logged in user from the service on page init
+        this._loginService.getLoggedInUser()
+        .subscribe( user => {
+            this.loggedInUser = user;
+            // console.log(this.loggedInUser);
+            if (this.loggedInUser) {
+                this.dataCheck(this.loggedInUser.uid);
+                console.log('running initial check...');
+            }
+        });
+
+     } // end oninit
 
     // login through the login service
     public login() {
@@ -75,4 +83,30 @@ export class LoginPageComponent implements OnInit {
 
     } // end datacheck()
 
+    // method to add a new user to the database
+    public submitNewUser() {
+
+        // make sure the password is both not blank and matches
+        if (this.pass1 === '' || (!this.pass1)) {
+            this._passwordError = true;
+            return;
+        }
+
+        // create the new IUser that will be posted on the DB
+        const newUser: IUser = {
+            name: this.loggedInUser.displayName,
+            uid: this.loggedInUser.uid,
+            viewpass: this.pass1,
+            tips: []
+        };
+
+        // call the tip service to add the user
+        this._tipService.addUser(newUser)
+        .subscribe(data => {
+            this.pass1 = '';
+            this.pass2 = '';
+            this.dataCheck(this.loggedInUser.uid);
+        });
+
+    } // end submitnewuser
 }
