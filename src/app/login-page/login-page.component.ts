@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { LoginService } from './../services/login.service';
+import { TipService } from './../services/tip.service';
 
 import 'rxjs/add/operator/map';
 
@@ -13,7 +14,7 @@ export class LoginPageComponent implements OnInit {
 
   public loggedInUser;
 
-  constructor(private _loginService: LoginService) { }
+  constructor(private _loginService: LoginService, private _tipService: TipService) { }
 
   ngOnInit() {
 
