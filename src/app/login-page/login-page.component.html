@@ -24,3 +24,17 @@
     <p>Does user have a view password: {{ viewPassResult }}</p>
 </div>
 <!-- End user validation -->
+
+<!-- Begin Initialize user block -->
+<!-- This only shows up if the user is logged in AND they have no ID in the system -->
+<div *ngIf="loggedInUser && userIdResult === false">
+    <p>User needs to be put in the system.</p>
+</div>
+<!-- End Initiliaze user block -->
+
+<!-- Begin display tips section -->
+<!-- This onlyl shows up if the user is logged in and they have a view password -->
+<div *ngIf="loggedInUser && userIdResult === true && viewPassResult === true">
+    <p>User can view tips.</p>
+</div>
+<!-- End display tips sectoin -->
