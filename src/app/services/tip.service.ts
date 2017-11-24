@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
-import 'rxjs/add/operator/map';
 
 import ITip from './../interfaces/tip.interface';
 import IUser from './../interfaces/user.interface';
+
+import 'rxjs/add/operator/map';
+
 
 @Injectable()
 
@@ -12,12 +14,6 @@ export class TipService {
     // initialize http module in constructor and let user know in console that its up and running
     constructor( private http: Http ) {
         console.log('Tip service initialized...');
-    }
-
-    // this is the method to call the back end api and get all the tips from the database, and .map it to a json (DEPRECATED)
-    getTasks() {
-        return this.http.get('http://localhost:3000/api/tips')
-            .map(res => res.json());
     }
 
     // this method brings back the entire document from the database thaqt contains the user id from google.
@@ -98,10 +94,4 @@ export class TipService {
             .map(res => res.json());
     }
 
-    public servUpdateStatus(tip) {
-        const headers = new Headers();
-        headers.append('Content-Type', 'application/json');
-        return this.http.put('http://localhost:3000/api/tip/' + tip._id, JSON.stringify(tip), {headers: headers})
-            .map(res => res.json);
-    }
 }
