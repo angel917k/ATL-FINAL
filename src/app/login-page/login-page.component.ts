@@ -134,7 +134,7 @@ export class LoginPageComponent implements OnInit {
         this._tipService.getTipsByUid(this.loggedInUser.uid)
         .subscribe( res => {
             this.userTips = res.tips;
-            console.log(this.userTips);
+            // console.log(this.userTips);
         });
     }
 }

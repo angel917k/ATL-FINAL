@@ -41,6 +41,26 @@
 <!-- Begin display tips section -->
 <!-- This onlyl shows up if the user is logged in and they have a view password -->
 <div *ngIf="loggedInUser && userIdResult === true && viewPassResult === true">
-    <p>User can view tips.</p>
+    <button (click)="viewTips()">Click here to view tips</button>
+    <div *ngIf="canViewTips === true">
+        <h2 class="text-center">Here are your tips, dawg.</h2>
+        <div class="container">
+            <!-- Begin header row -->
+            <div class="row">
+                <div class="col-sm-3">
+                    <h2>DATE</h2>
+                </div>
+                <div class="col-sm-9">
+                    <h2>TIP</h2>
+                </div>
+            </div> <!-- End header row -->
+            <!-- Begin for loop of tips -->
+            <div class="tip-row" *ngFor="let tip of userTips">
+                <div class="col-sm-3">{{ tip.date | date: 'medium' }}</div>
+                <div class="col-sm-9">{{ tip.content }}</div>
+            </div>
+            <!-- End for loop of tips -->
+        </div>
+    </div>
 </div>
 <!-- End display tips sectoin -->
