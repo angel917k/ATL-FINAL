@@ -8,12 +8,16 @@
 
 
 <!-- start of form -->
-  <form action="">
-    <textarea id="user-tips" class="tips center-block" name="tip" rows="18" cols="80" placeholder="Enter tip here!..." required></textarea>
+  <form #tipForm="ngForm" (ngSubmit)="submitTipIntoArray()">
+    <textarea id="user-tips" [(ngModel)]="content" class="tips center-block" name="tip" rows="18" cols="80" placeholder="Enter tip here!..." required></textarea>
 
-    <input type="checkbox" name="disclaimer" value="disclaimer">
+    <input type="checkbox" name="disclaimer" value="disclaimer" ngModel required>
     <label for="disclaimer">I agree to the a.t.l disclaimer</label>
 
-    <input class="tip-submit center-block" type="submit" name="submit" value="Submit Tip">
+    <input class="tip-submit center-block" type="submit" name="submit" value="Submit Tip" [disabled]="tipForm.invalid">
   </form>
 <!-- end of form -->
+
+<!-- begin warnings -->
+<p class="text-center" *ngIf="!loggedInUser">Warning: You are not logged in, therefore the tips have nowhere to go. Please contact your administrator and have him log in.</p>
+<!-- end warnings -->
