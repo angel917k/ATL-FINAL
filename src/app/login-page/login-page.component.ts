@@ -24,6 +24,9 @@ export class LoginPageComponent implements OnInit {
     public pass2: string;
     private _passwordError = false;
 
+    public canViewTips = false; // flag to make sure user can view tips. is ALWAYS false on reload
+    public userTips = []; // will contain user's stored tips from DB once verified
+
     constructor(private _loginService: LoginService, private _tipService: TipService) { }
 
     ngOnInit() {
@@ -107,6 +110,31 @@ export class LoginPageComponent implements OnInit {
             this.pass2 = '';
             this.dataCheck(this.loggedInUser.uid);
         });
-
     } // end submitnewuser
+
+        // this is the function of the button that only appears once its been verified that the logged in user is in
+    // the database and has a password. it asks for the viewing password in an prompt and then checks the database to make sure they match
+    // if it does, it instantiates the array of tips with all tips that are inside that document
+    public viewTips() {
+        const password = prompt('Input your viewing password');
+        this._tipService.verifyViewPass(this.loggedInUser.uid, password)
+        .subscribe(res => {
+            if (res === false) {
+                alert('Incorrect Password');
+            }
+            this._getTipsByUid();
+            this.canViewTips = res;
+
+        });
+    }
+
+    // method to pull all tips associates with a user id.
+    // THIS SHOULD ONLY BE CALLED WHEN PASSWORD HAS BEEN VERIFIED
+    private _getTipsByUid() {
+        this._tipService.getTipsByUid(this.loggedInUser.uid)
+        .subscribe( res => {
+            this.userTips = res.tips;
+            console.log(this.userTips);
+        });
+    }
 }
