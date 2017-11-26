@@ -28,7 +28,13 @@
 <!-- Begin Initialize user block -->
 <!-- This only shows up if the user is logged in AND they have no ID in the system -->
 <div *ngIf="loggedInUser && userIdResult === false">
-    <p>User needs to be put in the system.</p>
+    <h4>User needs to be added to the database</h4>
+    <label>Input viewing password: </label>
+    <input [(ngModel)]="pass1" type="password"><br>
+    <label>Repeat to confirm: </label>
+    <input [(ngModel)]="pass2" type="password"><br>
+    <button [disabled]="pass1 !== pass2 || pass1 == ''" (click)="submitNewUser()">Submit user into database</button>
+    <p *ngIf="_passwordError===true">Error: Invalid password</p>
 </div>
 <!-- End Initiliaze user block -->
 
