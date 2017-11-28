@@ -6,3 +6,61 @@
 <!-- start of header -->
 <h1 class="text-center">Login</h1>
 <!-- end of header -->
+
+<!-- Begin login info -->
+<div>
+    <p *ngIf="(!loggedInUser)" class="text-center">You are not logged in!</p>
+    <p *ngIf="(loggedInUser)" class="text-center">You are logged in as {{ loggedInUser.displayName }}.</p>
+    <div class="flex-container justify-center">
+        <button class="btn btn-default" [disabled]="loggedInUser" (click)="login()">Login</button>
+        <button class="btn btn-default" [disabled]="!loggedInUser" (click)="logout()">Logout</button>
+    </div>
+</div>
+<!-- End login info -->
+
+<!-- Begin user validation -->
+<div>
+    <p>Is user in the system: {{ userIdResult }}</p>
+    <p>Does user have a view password: {{ viewPassResult }}</p>
+</div>
+<!-- End user validation -->
+
+<!-- Begin Initialize user block -->
+<!-- This only shows up if the user is logged in AND they have no ID in the system -->
+<div *ngIf="loggedInUser && userIdResult === false">
+    <h4>User needs to be added to the database</h4>
+    <label>Input viewing password: </label>
+    <input [(ngModel)]="pass1" type="password"><br>
+    <label>Repeat to confirm: </label>
+    <input [(ngModel)]="pass2" type="password"><br>
+    <button [disabled]="pass1 !== pass2 || pass1 == ''" (click)="submitNewUser()">Submit user into database</button>
+    <p *ngIf="_passwordError===true">Error: Invalid password</p>
+</div>
+<!-- End Initiliaze user block -->
+
+<!-- Begin display tips section -->
+<!-- This onlyl shows up if the user is logged in and they have a view password -->
+<div *ngIf="loggedInUser && userIdResult === true && viewPassResult === true">
+    <button (click)="viewTips()">Click here to view tips</button>
+    <div *ngIf="canViewTips === true">
+        <h2 class="text-center">Here are your tips, dawg.</h2>
+        <div class="container">
+            <!-- Begin header row -->
+            <div class="row">
+                <div class="col-sm-3">
+                    <h2>DATE</h2>
+                </div>
+                <div class="col-sm-9">
+                    <h2>TIP</h2>
+                </div>
+            </div> <!-- End header row -->
+            <!-- Begin for loop of tips -->
+            <div class="tip-row" *ngFor="let tip of userTips">
+                <div class="col-sm-3">{{ tip.date | date: 'medium' }}</div>
+                <div class="col-sm-9">{{ tip.content }}</div>
+            </div>
+            <!-- End for loop of tips -->
+        </div>
+    </div>
+</div>
+<!-- End display tips sectoin -->
