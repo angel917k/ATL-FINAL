@@ -6,7 +6,7 @@
 .goback{
   height:25px;
   width: 25px;
-  position: fixed;
+  position: absolute;
   left:calc(100% - 95px);
   top:10px;
   z-index: 2000;
