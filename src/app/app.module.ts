@@ -14,7 +14,6 @@ import { LoginService } from './services/login.service';
 import { TipService } from './services/tip.service';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { TipComponent } from './tip/tip.component';
 import { NavComponent } from './nav/nav.component';
@@ -33,7 +32,6 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     LoginComponent,
     TipComponent,
     NavComponent,

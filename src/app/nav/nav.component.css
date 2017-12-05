@@ -2,6 +2,10 @@
 
 /*start of nav bar styles*/
 
+.navbar-header {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
 .navbar-fixed-top, .navbar-fixed-bottom {
   position: relative;
   margin-top: 0px;
@@ -16,11 +20,13 @@
   font-family: 'Slabo 27px', serif;
   color:#fff;
   font-size: 2em;
+  text-shadow: 1px 1px 2px #000;
 }
 
 .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form{
   background-color: transparent;
   border-color:#fff;
+  text-shadow: 2px 2px 2px #000;
 }
 
 .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form:nth-last-child(3){
@@ -43,6 +49,10 @@
 
 .navbar-inverse .navbar-nav>li>a {
     color: #fff;
+}
+
+.icon-bar {
+  box-shadow: 2px 2px 3px #000;
 }
 /*start of always showing media query*/
 @media (max-width: 2000px) {
