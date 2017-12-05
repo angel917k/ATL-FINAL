@@ -26,8 +26,7 @@
         "../src/js/jquery/dist/jquery.slim.js",
         "../src/js/popper.js/dist/umd/popper.js",
         "../src/js/bootstraps/dist/js/bootstrap.js",
-        "../src/js/atl-js-code/splash.js",
-        "../src/js/circletype/circletype.min.js"
+        "../src/js/atl-js-code/splash.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
