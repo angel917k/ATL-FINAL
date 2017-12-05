@@ -19,10 +19,10 @@
 <!-- End login info -->
 
 <!-- Begin user validation -->
-<div>
+<!-- <div>
     <p>Is user in the system: {{ userIdResult }}</p>
     <p>Does user have a view password: {{ viewPassResult }}</p>
-</div>
+</div> -->
 <!-- End user validation -->
 
 <!-- Begin Initialize user block -->
@@ -41,8 +41,8 @@
 <!-- Begin display tips section -->
 <!-- This onlyl shows up if the user is logged in and they have a view password -->
 <div *ngIf="loggedInUser && userIdResult === true && viewPassResult === true">
-    <button (click)="viewTips()">Click here to view tips</button>
-    <div *ngIf="canViewTips === true">
+    <button (click)="viewTips()" class="center-block">Click here to view tips</button>
+    <div *ngIf="canViewTips === true" class="white-text back-shadow text-center">
         <h2 class="text-center">Here are your tips, dawg.</h2>
         <div class="container">
             <!-- Begin header row -->
