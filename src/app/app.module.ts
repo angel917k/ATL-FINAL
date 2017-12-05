@@ -22,12 +22,14 @@ import { TipPageComponent } from './tip-page/tip-page.component';
 import { SplashComponent } from './splash/splash.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { TutorialComponent } from './tutorial/tutorial.component';
+import { HelpComponent } from './help/help.component';
 
 const appRoutes: Routes = [
   {path: 'home', component: SplashComponent},
   {path: 'tip-page', component: TipPageComponent},
   {path: 'login-page', component: LoginPageComponent},
   {path: 'tutorial', component: TutorialComponent},
+  {path: 'help', component: HelpComponent},
   {path: '', redirectTo: 'home', pathMatch: 'full'},
 
 ];
@@ -43,7 +45,8 @@ const appRoutes: Routes = [
     TipPageComponent,
     SplashComponent,
     LoginPageComponent,
-    TutorialComponent
+    TutorialComponent,
+    HelpComponent
   ],
   imports: [
     BrowserModule,
