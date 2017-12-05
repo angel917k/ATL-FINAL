@@ -27,8 +27,9 @@ const appRoutes: Routes = [
   {path: 'home', component: SplashComponent},
   {path: 'tip-page', component: TipPageComponent},
   {path: 'login-page', component: LoginPageComponent},
+  {path: 'tutorial', component: TutorialComponent},
   {path: '', redirectTo: 'home', pathMatch: 'full'},
-  {path: 'tutorial', component: TutorialComponent}
+
 ];
 
 
