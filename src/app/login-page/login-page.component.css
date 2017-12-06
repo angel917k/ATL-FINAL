@@ -15,3 +15,8 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.tip-row {
+  border-bottom: 10px solid red;
+  overflow: hidden;
+}
