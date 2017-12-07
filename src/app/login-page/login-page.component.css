@@ -27,3 +27,11 @@
   color: #fff;
   padding-bottom: 30px;
 }
+
+.login-tips {
+  border: 8px ridge #fff;
+  background-color: rgba(50,50,50,0.9);
+  color: #fff;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}

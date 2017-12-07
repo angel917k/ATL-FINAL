@@ -3,20 +3,17 @@
 <a routerLink="/home"><div class="goback"></div></a>
 <!-- end of go back -->
 
-<!-- start of header -->
-
-<!-- end of header -->
-
 <!-- Begin login info -->
 <div class="container login-buttons">
     <div class="row">
         <div class="col-sm-12">
+            <!-- Header below -->
             <h1 class="text-center white-text">Login</h1>
             <p *ngIf="(!loggedInUser)" class="text-center white-text">You are not logged in!</p>
             <p *ngIf="(loggedInUser)" class="text-center white-text">You are logged in as {{ loggedInUser.displayName }}.</p>
             <div class="flex-container justify-center">
-                <button class="btn btn-default" [disabled]="loggedInUser" (click)="login()">Login</button>
-                <button class="btn btn-default" [disabled]="!loggedInUser" (click)="logout()">Logout</button>
+                <button class="btn btn-info" [disabled]="loggedInUser" (click)="login()">Login</button>
+                <button class="btn btn-info" [disabled]="!loggedInUser" (click)="logout()">Logout</button>
             </div>
         </div>
     </div>
@@ -46,27 +43,35 @@
 
 <!-- Begin display tips section -->
 <!-- This onlyl shows up if the user is logged in and they have a view password -->
-<div *ngIf="loggedInUser && userIdResult === true && viewPassResult === true">
-    <button (click)="viewTips()">Click here to view tips</button>
-    <div *ngIf="canViewTips === true">
-        <h2 class="text-center">Here are your tips, dawg.</h2>
-        <div class="container">
-            <!-- Begin header row -->
-            <div class="row">
-                <div class="col-sm-3">
-                    <h2>DATE</h2>
-                </div>
-                <div class="col-sm-9">
-                    <h2>TIP</h2>
-                </div>
-            </div> <!-- End header row -->
-            <!-- Begin for loop of tips -->
-            <div class="tip-row" *ngFor="let tip of userTips">
-                <div class="col-sm-3">{{ tip.date | date: 'medium' }}</div>
-                <div class="col-sm-9">{{ tip.content }}</div>
+
+<div *ngIf="loggedInUser && userIdResult === true && viewPassResult === true" class="container">
+    <div class="row">
+        <div class="col-sm-12 login-tips">
+            <div class="flex-container justify-center">
+                <button class="btn btn-info" (click)="viewTips()">Click here to view tips</button>
             </div>
-            <!-- End for loop of tips -->
+            <div *ngIf="canViewTips === true">
+                <h2 class="text-center">Here are your tips, dawg.</h2>
+                <div class="container">
+                    <!-- Begin header row -->
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <h2>DATE</h2>
+                        </div>
+                        <div class="col-sm-9">
+                            <h2>TIP</h2>
+                        </div>
+                    </div> <!-- End header row -->
+                    <!-- Begin for loop of tips -->
+                    <div class="tip-row" *ngFor="let tip of userTips">
+                        <div class="col-sm-3">{{ tip.date | date: 'medium' }}</div>
+                        <div class="col-sm-9">{{ tip.content }}</div>
+                    </div>
+                    <!-- End for loop of tips -->
+                </div>
+            </div>
         </div>
     </div>
+
 </div>
 <!-- End display tips sectoin -->
