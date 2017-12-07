@@ -1,4 +1,12 @@
 .help-banner {
-    background-color: rgba(50, 50, 50, 0.4);
+    background-color: rgba(50, 50, 50, 0.9);
     color: #fff;
+}
+
+.help-container {
+    border: 8px ridge #fff;
+    background-color: rgba(50, 50, 50, 0.9);
+    border-radius: 5%;
+    color: #fff;
+    padding-bottom: 20px;
 }
