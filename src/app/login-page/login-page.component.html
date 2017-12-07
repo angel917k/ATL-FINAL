@@ -52,9 +52,9 @@
             </div>
             <div *ngIf="canViewTips === true">
                 <h2 class="text-center">Here are your tips, dawg.</h2>
-                <div class="container">
+                
                     <!-- Begin header row -->
-                    <div class="row">
+                    <div class="row login-tip-view-header">
                         <div class="col-sm-3">
                             <h2>DATE</h2>
                         </div>
@@ -63,12 +63,12 @@
                         </div>
                     </div> <!-- End header row -->
                     <!-- Begin for loop of tips -->
-                    <div class="tip-row" *ngFor="let tip of userTips">
+                    <div class="row tip-row" *ngFor="let tip of userTips">
                         <div class="col-sm-3">{{ tip.date | date: 'medium' }}</div>
                         <div class="col-sm-9">{{ tip.content }}</div>
                     </div>
                     <!-- End for loop of tips -->
-                </div>
+                
             </div>
         </div>
     </div>
