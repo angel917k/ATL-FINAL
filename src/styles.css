@@ -27,3 +27,9 @@ body{
 .align-center {
   align-content: center;
 }
+
+/* global text styles */
+
+.blue-text-shadow {
+  text-shadow: 2px 2px 2px dodgerblue;
+}
