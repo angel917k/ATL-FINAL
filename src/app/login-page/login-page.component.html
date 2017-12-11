@@ -30,27 +30,35 @@
 
 <!-- Begin Initialize user block -->
 <!-- This only shows up if the user is logged in AND they have no ID in the system -->
-<div *ngIf="loggedInUser && userIdResult === false" class="container">
+<div *ngIf="loggedInUser && userIdResult === false" class="container login-register">
     <div class="row">
         <div class="col-sm-12">
-            <div class="login-register">
-                <h3 class="blue-text-shadow text-center">Register</h3>
-                <p class="text-center">Thanks for using the ATL app. You are logged in, but aren't registered in the database. Let's get you in there.</p>
-                <div class="flex-container login-viewpass-row">
-                    <label>Input viewing password: </label>
-                    <input [(ngModel)]="pass1" type="password">
-                </div>
-                <div class="flex-container login-viewpass-row">
-                    <label>Repeat to confirm: </label>
-                    <input [(ngModel)]="pass2" type="password">
-                </div>
-                <h4 class="login-register-disclaimer text-center">This password will be required in order to view all tips associated with your account. Do not give this password out.</h4>
-                <div class="flex-container justify-center">
-                    <button class="btn btn-info login-register-button" [disabled]="pass1 !== pass2 || pass1 == ''" (click)="submitNewUser()">Submit user into database</button>
-                </div>
-                <p *ngIf="_passwordError===true">Error: Invalid password</p>
-            </div>                   
+            <h3 class="blue-text-shadow text-center">Register</h3>
+            <p class="text-center">Thanks for using the ATL app. You are logged in, but aren't registered in the database. Let's get you in there.</p>
         </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <label>Input viewing password:</label>                
+        </div>
+        <div class="col-sm-4 col-sm-offset-4">
+            <input [(ngModel)]="pass1" type="password">
+        </div>
+        <div class="col-sm-4">
+            <label>Repeat to confirm: </label>
+        </div>
+        <div class="col-sm-4 col-sm-offset-4">
+            <input [(ngModel)]="pass2" type="password">
+        </div>
+                
+            
+
+            <h4 class="login-register-disclaimer text-center">This password will be required in order to view all tips associated with your account. Do not give this password out.</h4>
+            <div class="flex-container justify-center">
+                <button class="btn btn-info login-register-button" [disabled]="pass1 !== pass2 || pass1 == ''" (click)="submitNewUser()">Submit user into database</button>
+            </div>
+            <p *ngIf="_passwordError===true">Error: Invalid password</p>
+        
     </div>
 </div>
 <!-- End Initiliaze user block -->
