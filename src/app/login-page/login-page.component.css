@@ -54,6 +54,11 @@
 
 .login-register-disclaimer {
   margin-top: 15px;
+  color: #f00;
+}
+
+.login-register-pw-top {
+  margin-top: 15px;
 }
 
 .login-tips {

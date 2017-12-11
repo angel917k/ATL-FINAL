@@ -33,3 +33,7 @@ body{
 .blue-text-shadow {
   text-shadow: 2px 2px 2px dodgerblue;
 }
+
+.blue-text {
+  color: dodgerblue;
+}
