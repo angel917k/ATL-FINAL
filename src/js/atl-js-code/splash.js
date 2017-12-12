@@ -1,7 +1,9 @@
-
-$(document).ready(function(){
-
-$('.navbar-toggle').on('click', function() {
-  $('.after-navbar').css('margin-top','230px');  //scro ll do wn entire page on navbar click
-});
+$(document).ready(function () {
+  $(document).click(function (event) {
+      var clickover = $(event.target);
+      var _opened = $(".navbar-collapse").hasClass("navbar-collapse collapse in");
+      if (_opened === true && !clickover.hasClass("navbar-toggle")) {
+          $("button.navbar-toggle").click();
+      }
+  });
 });
