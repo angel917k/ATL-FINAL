@@ -3,6 +3,7 @@
 
 body{
   height:100%;
+  min-height: 100vh;
   width:100%;
   background-image: url("app/img/anonymous2.jpg");
   background-position: center;
@@ -28,6 +29,7 @@ body{
   align-content: center;
 }
 
+
 /* global text styles */
 
 .blue-text-shadow {
@@ -41,3 +43,11 @@ body{
 .blue-text {
   color: dodgerblue;
 }
+.white-text{
+  color: #fff;
+  text-shadow: 1px 1px 2px #000;
+}
+.back-shadow{
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
