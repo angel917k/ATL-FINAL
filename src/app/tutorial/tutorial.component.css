@@ -8,3 +8,8 @@
     color: #ffff;
     background-color: rgba(50, 50, 50, 0.9);
 }
+
+.tutorial-header {
+    color: dodgerblue;
+    text-shadow: 1px 1px 1px #666;
+}

@@ -29,6 +29,20 @@ body{
   align-content: center;
 }
 
+
+/* global text styles */
+
+.blue-text-shadow {
+  text-shadow: 2px 2px 2px dodgerblue;
+}
+
+.dark-blue-text-shadow {
+  text-shadow: 3px 3px 3px #006;
+}
+
+.blue-text {
+  color: dodgerblue;
+}
 .white-text{
   color: #fff;
   text-shadow: 1px 1px 2px #000;
@@ -36,3 +50,4 @@ body{
 .back-shadow{
   background-color: rgba(0, 0, 0, 0.5);
 }
+
