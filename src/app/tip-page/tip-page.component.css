@@ -69,3 +69,24 @@ input[type=checkbox] + label{
   background-color: rgba(50, 50, 50, 0.9);
   margin-top: 60px;
 }
+
+.explosion{
+  background-image: url('../img/Explode_fire.gif');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 500px;
+  width: 500px;
+  position: absolute;
+  top: 30%;
+  left: 34%
+}
+.hide {
+  visibility: hidden;
+}
+
+@media (max-width: 768px) {
+  .explosion {
+    left: 0%;
+  }
+}

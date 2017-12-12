@@ -15,8 +15,9 @@
 
     <input type="checkbox" name="disclaimer" value="disclaimer" ngModel required>
     <label for="disclaimer" class="white-text">I agree to the a.t.l disclaimer</label>
-
-    <input class="tip-submit center-block" type="submit" name="submit" value="Submit Tip" [disabled]="tipForm.invalid">
+    <!-- <img src="../img/Explode_fire.gif" alt="EXPLOSION"> -->
+    <div class="explosion hide center-block img-responsive"></div>
+    <input class="tip-submit center-block" (click)="explode()" type="submit" name="submit" value="Submit Tip" [disabled]="tipForm.invalid">
   </form>
 <!-- end of form -->
 

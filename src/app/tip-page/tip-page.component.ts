@@ -48,4 +48,13 @@ export class TipPageComponent implements OnInit {
     });
   } // end submitTip()
 
+
+  public explode() {
+    document.querySelector('.explosion').classList.remove('hide');
+    setTimeout(function(){
+      document.querySelector('.explosion').classList.add('hide');
+    }, 800);
+  }
 }
+
+
