@@ -1,0 +1,10 @@
+.tutorial-banner {
+    background-color: rgba(50, 50, 50, 0.4);
+    color: #fff;
+}
+
+.tutorial-container {
+    border: 8px ridge #fff;
+    color: #ffff;
+    background-color: rgba(50, 50, 50, 0.9);
+}

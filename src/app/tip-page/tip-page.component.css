@@ -62,3 +62,10 @@ input[type=checkbox]{
 input[type=checkbox] + label{
   margin-left: 3px;
 }
+
+.tip-page-disclaimer {
+  border: 8px ridge #fff;
+  color: #fff;
+  background-color: rgba(50, 50, 50, 0.9);
+  margin-top: 60px;
+}
