@@ -16,7 +16,12 @@
   background-size: cover;
 }
 
-.tip-row {
-  border-bottom: 10px solid red;
+
+.row, .tip-row {
+  border-bottom: 1px solid #6495ED;
   overflow: hidden;
+}
+
+.col-sm-9{
+  border-left: 1px solid #6495ED;
 }
