@@ -62,6 +62,10 @@
   margin-top: 15px;
 }
 
+.login-register-viewpass {
+  color: #000;
+}
+
 .login-tips {
   border: 8px ridge #fff;
   background-color: rgba(50,50,50,0.9);
