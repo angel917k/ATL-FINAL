@@ -144,7 +144,7 @@ export class LoginPageComponent implements OnInit {
         if (confirm('This will delete all the tips associate with your account! Are you sure?')) {
             this._tipService.deleteAllTips(this.loggedInUser.uid)
             .subscribe( res => {
-                console.log(res);
+                this._getTipsByUid();
             });
         }
     }
