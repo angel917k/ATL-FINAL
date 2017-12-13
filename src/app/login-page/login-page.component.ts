@@ -137,4 +137,10 @@ export class LoginPageComponent implements OnInit {
             // console.log(this.userTips);
         });
     }
+
+    public deleteMyTips() {
+        if (confirm('This will delete all the tips associate with your account! Are you sure?')) {
+            this._tipService.deleteAllTips(this.loggedInUser.uid);
+        }
+    }
 }
