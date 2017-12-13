@@ -74,6 +74,10 @@
   border-bottom: 4px solid dodgerblue;
 }
 
+.login-tip-view-clear-button {
+  margin-top: 30px;
+}
+
 .row, .tip-row {
   overflow: hidden;
 }
