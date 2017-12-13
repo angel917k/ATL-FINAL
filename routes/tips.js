@@ -174,6 +174,28 @@ router.post('/array-tip/:id', function(req, res, next) {
     );
 });
 
+// clear the tip array for a given userid
+router.post('/clear-tips/:id', function(req, res, next) {
+    console.log(`Clearing the tip array of the following userid ${req.params.id}: ${req.body}`);
+    // const testTip = {
+    //     date: 'sometime',
+    //     tip: 'sometip'
+    // }
+
+    const targetUser = req.params.id;
+    db.tips.update(
+        { uid: targetUser },
+        {$set: { tips: [] }}, {}, function(err, tip) {
+            if (err) {
+                res.send(err);
+            }
+            res.send('Tips cleared.');
+            console.log(`Tips cleared for ${targetUser}.`);
+        }
+    );
+});
+
+
 // delete tip
 router.delete('/tip/:id', function(req, res, next) {
     db.tips.remove({_id: mongojs.ObjectId(req.params.id)}, function (err, tip) {
