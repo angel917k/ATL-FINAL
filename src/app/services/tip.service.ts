@@ -88,6 +88,13 @@ export class TipService {
             .map(res => res.json);
     }
 
+    // this method clears all the tips from a given user id
+    public deleteAllTips(id) {
+        const headers = new Headers();
+        return this.http.post('http://localhost:3000/api/clear-tips' + id, {header: headers} )
+        .map(res => res.json);
+    }
+
     // this method deletes the tip given the correct id
     deleteTip(id) {
         return this.http.delete('http://localhost:3000/api/tip/' + id)
