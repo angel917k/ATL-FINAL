@@ -7,13 +7,21 @@ import IUser from './../interfaces/user.interface';
 
 import 'rxjs/add/operator/map';
 
+import {Location} from '@angular/common';
+
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
   styleUrls: ['./login-page.component.css']
 })
 
+
+
 export class LoginPageComponent implements OnInit {
+
+    backClicked() {
+        this._location.back();
+    } //function which returns user to previous page/component using the back button
 
     public loggedInUser; // will contain users login info
     public userIdResult; // flag to denote if the user is in the database
@@ -27,7 +35,7 @@ export class LoginPageComponent implements OnInit {
     public canViewTips = false; // flag to make sure user can view tips. is ALWAYS false on reload
     public userTips = []; // will contain user's stored tips from DB once verified
 
-    constructor(private _loginService: LoginService, private _tipService: TipService) { }
+    constructor(private _loginService: LoginService, private _tipService: TipService, private _location: Location) { }
 
     ngOnInit() {
 

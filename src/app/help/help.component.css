@@ -30,3 +30,6 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+.goback:hover{
+  cursor: pointer;
+}

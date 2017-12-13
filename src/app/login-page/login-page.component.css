@@ -16,6 +16,10 @@
   background-size: cover;
 }
 
+.goback:hover{
+  cursor: pointer;
+}
+
 
 .tip-row {
   border-bottom: 1px dotted white;
@@ -77,4 +81,3 @@
 .row, .tip-row {
   overflow: hidden;
 }
-

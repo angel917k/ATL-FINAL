@@ -1,6 +1,6 @@
 
 <!-- start of go back -->
-<a routerLink="/home"><div class="goback"></div></a>
+<a (click)="backClicked()"><div class="goback"></div></a>
 <!-- end of go back -->
 
 <!-- Begin login info -->
@@ -39,7 +39,7 @@
     </div>
     <div class="row login-register-pw-top">
         <div class="col-sm-2 col-sm-offset-4">
-            <label>Input viewing password:</label>                
+            <label>Input viewing password:</label>
         </div>
         <div class="col-sm-2">
             <input [(ngModel)]="pass1" type="password">
@@ -59,7 +59,7 @@
             <button class="btn btn-info login-register-button" [disabled]="pass1 !== pass2 || pass1 == ''" (click)="submitNewUser()">Submit user into database</button>
         </div>
         <p *ngIf="_passwordError===true">Error: Invalid password</p>
-    
+
     </div>
 </div>
 <!-- End Initiliaze user block -->
@@ -75,7 +75,7 @@
             </div>
             <div *ngIf="canViewTips === true">
                 <h2 class="text-center">Here are your tips, dawg.</h2>
-                
+
                     <!-- Begin header row -->
                     <div class="row login-tip-view-header">
                         <div class="col-sm-3">
