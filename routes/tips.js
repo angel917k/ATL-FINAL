@@ -175,7 +175,7 @@ router.post('/array-tip/:id', function(req, res, next) {
 });
 
 // clear the tip array for a given userid
-router.post('/clear-tips/:id', function(req, res, next) {
+router.get('/clear-tips/:id', function(req, res, next) {
     console.log(`Clearing the tip array of the following userid ${req.params.id}: ${req.body}`);
     // const testTip = {
     //     date: 'sometime',
