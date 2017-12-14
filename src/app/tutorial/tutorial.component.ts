@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Location} from '@angular/common';
 
 @Component({
     selector: 'app-tutorial',
@@ -6,4 +7,12 @@ import { Component } from '@angular/core';
     styleUrls: ['./tutorial.component.css']
 })
 
-export class TutorialComponent {}
+export class TutorialComponent {
+
+  constructor(private _location: Location) { }
+
+  backClicked() {
+      this._location.back();
+  } //function which returns user to previous page/component using the back button
+
+}

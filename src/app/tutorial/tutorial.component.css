@@ -13,3 +13,20 @@
     color: dodgerblue;
     text-shadow: 1px 1px 1px #666;
 }
+
+/*go back button styles*/
+.goback{
+  height:25px;
+  width: 25px;
+  position: absolute;
+  left:calc(100% - 95px);
+  top:10px;
+  z-index: 2000;
+  background-image: url('../img/back-arrow.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.goback:hover{
+  cursor: pointer;
+}

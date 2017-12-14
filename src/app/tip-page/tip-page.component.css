@@ -5,9 +5,9 @@ h1{
 
 }
 
-.white-text{ 
+.white-text{
   color: #fff;
-  text-shadow: 2px 2px 2px #000; 
+  text-shadow: 2px 2px 2px #000;
 }
 
 
@@ -23,6 +23,9 @@ h1{
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+.goback:hover{
+  cursor: pointer;
 }
 
 

@@ -5,6 +5,8 @@ import { NgForm } from '@angular/forms';
 import { TipService } from './../services/tip.service';
 import { LoginService } from './../services/login.service';
 
+import {Location} from '@angular/common';
+
 @Component({
   selector: 'app-tip-page',
   templateUrl: './tip-page.component.html',
@@ -12,11 +14,16 @@ import { LoginService } from './../services/login.service';
 })
 export class TipPageComponent implements OnInit {
 
+  backClicked() {
+      this._location.back();
+  } //function which returns user to previous page/component using the back button
+
+
   private _tipForm: NgForm; // holds the form object
   public content: string; // hold the variable that is two-way binded to the textarea
   public loggedInUser; // will grab login info from the login service
 
-  constructor(private _tipService: TipService, private _loginService: LoginService) { }
+  constructor(private _tipService: TipService, private _loginService: LoginService, private _location: Location) { }
 
   ngOnInit() {
     // get login info as soon as page is loaded
