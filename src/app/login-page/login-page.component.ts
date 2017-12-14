@@ -145,4 +145,15 @@ export class LoginPageComponent implements OnInit {
             // console.log(this.userTips);
         });
     }
+
+    // method to delete all the tips for the user that iss currently logged in
+    // LESSON: the get request will not work if you don't subscribe to it, even if the result doesnt have anything substantial
+    public deleteMyTips() {
+        if (confirm('This will delete all the tips associate with your account! Are you sure?')) {
+            this._tipService.deleteAllTips(this.loggedInUser.uid)
+            .subscribe( res => {
+                this._getTipsByUid();
+            });
+        }
+    }
 }

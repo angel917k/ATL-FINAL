@@ -42,7 +42,7 @@
             <label>Input viewing password:</label>
         </div>
         <div class="col-sm-2">
-            <input [(ngModel)]="pass1" type="password">
+            <input class="login-register-viewpass" [(ngModel)]="pass1" type="password">
         </div>
     </div>
     <div class="row">
@@ -50,7 +50,7 @@
             <label>Repeat to confirm: </label>
         </div>
         <div class="col-sm-2">
-            <input [(ngModel)]="pass2" type="password">
+            <input class="login-register-viewpass" [(ngModel)]="pass2" type="password">
         </div>
     </div>
     <div class="row">
@@ -74,7 +74,7 @@
                 <button class="btn btn-info" (click)="viewTips()">Click here to view tips</button>
             </div>
             <div *ngIf="canViewTips === true">
-                <h2 class="text-center">Here are your tips, dawg.</h2>
+                <h2 class="text-center">Current tips</h2>
 
                     <!-- Begin header row -->
                     <div class="row login-tip-view-header">
@@ -91,6 +91,9 @@
                         <div class="col-sm-9">{{ tip.content }}</div>
                     </div>
                     <!-- End for loop of tips -->
+                    <div class="flex-container justify-center">
+                        <button class="btn btn-danger login-tip-view-clear-button" (click)="deleteMyTips()">Clear all tips</button>
+                    </div>
             </div>
         </div>
     </div>

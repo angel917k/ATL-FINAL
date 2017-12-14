@@ -66,6 +66,10 @@
   margin-top: 15px;
 }
 
+.login-register-viewpass {
+  color: #000;
+}
+
 .login-tips {
   border: 8px ridge #fff;
   background-color: rgba(50,50,50,0.9);
@@ -76,6 +80,10 @@
 
 .login-tip-view-header {
   border-bottom: 4px solid dodgerblue;
+}
+
+.login-tip-view-clear-button {
+  margin-top: 30px;
 }
 
 .row, .tip-row {
